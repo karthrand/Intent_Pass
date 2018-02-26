@@ -4,14 +4,33 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 	android:orientation="vertical">
-    <!--  步骤二：新增显示用TextView  -->
+
+    <!--  步骤二：新增显示用TextView和返回用的EditText和按钮  -->
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:text="显示内容"
+		android:text="显示接收的内容"
 		android:layout_gravity="center_horizontal"
 		android:id="@+id/targetTextView1"/>
-    <!--  步骤二结束  -->
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+
+		<EditText
+			android:layout_width="wrap_content"
+			android:ems="10"
+			android:layout_height="wrap_content"
+			android:hint="输入返回的内容"/>
+
+		<Button
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="返回"/>
+
+	</LinearLayout>
+
 </LinearLayout>
 
