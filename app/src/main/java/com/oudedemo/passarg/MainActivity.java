@@ -11,16 +11,17 @@ public class MainActivity extends Activity
     private Button button;
     private EditText et1,et2;
     private String name,test;
+    private TextView tv;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        setContentView(R.layout.main);
         //对象绑定
         button=(Button) findViewById(R.id.mainButton1);
         et1=(EditText) findViewById(R.id.mainEditText1);
         et2=(EditText) findViewById(R.id.mainEditText2);
+        tv=(TextView) findViewById(R.id.mainTextView2);
         
         //button实现点击事件
         button.setOnClickListener(new View.OnClickListener(){
@@ -56,13 +57,34 @@ public class MainActivity extends Activity
                     bundle.putInt("numbers",number);
                     intent.putExtras(bundle);
                     
-                    //跳转
+                    //跳转,1为请求码，保证为唯一值就行
                     intent.setClass(MainActivity.this,TargetActivity.class);
-                    startActivity(intent);
-                    MainActivity.this.finish();
+                    startActivityForResult(intent,1);
+                    
                     
                 }
             });
-                     
+            
+                    
     }
+     /* 步骤六 接收返回的信息  */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+       switch(requestCode){
+           case 1:
+               if (resultCode == RESULT_OK){
+                   String result = data.getStringExtra("result");
+                   tv.setText(result);
+               }
+               break;
+           default:
+       }
+       
+        
+    }
+
+
+    
+    
 }

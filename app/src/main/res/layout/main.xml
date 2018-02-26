@@ -5,17 +5,17 @@
 	android:layout_width="match_parent"
 	android:gravity="center"
 	android:paddingTop="15dp">
-    <!-- 步骤一：
-    新增2个提示用的TextView和2个输入数据用的EditText
-    EditText需要添加id
-    新增两个TextView，1个用于提示，一个用于接收返回信息
-    -->
+
 	<LinearLayout
 		android:layout_height="wrap_content"
 		android:layout_width="wrap_content"
 		android:orientation="horizontal"
 		android:id="@+id/mainLinearLayout1">
-
+        <!-- 步骤一：
+        新增2个提示用的TextView和2个输入数据用的EditText
+        EditText需要添加id
+        新增两个TextView，1个用于提示，一个用于接收返回信息
+        -->
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -74,7 +74,8 @@
 		android:text="等待返回"
 		android:textAppearance="?android:attr/textAppearanceMedium"
 		android:layout_toRightOf="@id/mainTextView1"
-		android:layout_below="@id/mainButton1"/>
+		android:layout_below="@id/mainButton1"
+		android:id="@+id/mainTextView2"/>
 
 </RelativeLayout>
 
